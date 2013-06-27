@@ -30,10 +30,6 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
                 ddlRencana.SelectedValue = dt.Rows(0)("Rencana")
                 ddlDampak.SelectedValue = dt.Rows(0)("Dampak")
                 txtYesDampak.Text = "" & dt.Rows(0)("YesDampak")
-
-                btnSave.Enabled = True
-                btnDelete.Enabled = True
-
                 ddlJenisSediaan.SelectedValue = dt.Rows(0)("JenisSediaan")
                 txtUraian.Text = dt.Rows(0)("Uraian")
                 txtTindakan.Text = dt.Rows(0)("TindakanSementara")
@@ -47,19 +43,19 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
                 ddlPenyebabPenyimpangan.SelectedValue = dt.Rows(0)("PenyebabPenyimpangan")
                 txtPenyebabPenyimpanganLain.Text = "" & dt.Rows(0)("PenyebabPenyimpanganLain")
 
-                txtPerbaikan.Text = "" & dt.Rows(0)("Perbaikan")
-                If Not IsDBNull(dt.Rows(0)("IsClosedPerbaikan")) Then
-                    chkIsClosedPerbaikan.Checked = dt.Rows(0)("IsClosedPerbaikan")
-                End If
-                txtTglPerbaikan.Text = If(IsDBNull(dt.Rows(0)("TglPerbaikan")), _
-                                    String.Empty, _
-                                    Format(CDate(dt.Rows(0)("TglPerbaikan")), "dd-MMM-yy"))
-                txtEmailPerbaikan.Text = "" & dt.Rows(0)("EmailPerbaikan")
-                txtPenanggungJawabPerbaikan.Text = "" & dt.Rows(0)("PenanggungJawabPerbaikan")
-                'ddlDepartemenPJPerbaikan.SelectedValue = dt.Rows(0)("DepartemenPJPerbaikan")
-                If Not IsDBNull(dt.Rows(0)("DepartemenPJPerbaikan")) Then
-                    ddlDepartemenPJPerbaikan.SelectedValue = dt.Rows(0)("DepartemenPJPerbaikan")
-                End If
+                'txtPerbaikan.Text = "" & dt.Rows(0)("Perbaikan")
+                'If Not IsDBNull(dt.Rows(0)("IsClosedPerbaikan")) Then
+                '    chkIsClosedPerbaikan.Checked = dt.Rows(0)("IsClosedPerbaikan")
+                'End If
+                'txtTglPerbaikan.Text = If(IsDBNull(dt.Rows(0)("TglPerbaikan")), _
+                '                    String.Empty, _
+                '                    Format(CDate(dt.Rows(0)("TglPerbaikan")), "dd-MMM-yy"))
+                'txtEmailPerbaikan.Text = "" & dt.Rows(0)("EmailPerbaikan")
+                'txtPenanggungJawabPerbaikan.Text = "" & dt.Rows(0)("PenanggungJawabPerbaikan")
+                ''ddlDepartemenPJPerbaikan.SelectedValue = dt.Rows(0)("DepartemenPJPerbaikan")
+                'If Not IsDBNull(dt.Rows(0)("DepartemenPJPerbaikan")) Then
+                '    ddlDepartemenPJPerbaikan.SelectedValue = dt.Rows(0)("DepartemenPJPerbaikan")
+                'End If
 
                 txtTindakanPerbaikan.Text = "" & dt.Rows(0)("TindakanPerbaikan")
                 If Not IsDBNull(dt.Rows(0)("IsClosedTPerbaikan")) Then
@@ -90,7 +86,10 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
                 If Not IsDBNull(dt.Rows(0)("DepartemenPJTPencegahan")) Then
                     ddlDepartemenPJTPencegahan.SelectedValue = dt.Rows(0)("DepartemenPJTPencegahan")
                 End If
-                
+
+                btnAddPerbaikan.Enabled = True
+                btnHapusPerbaikan.Enabled = True
+
                 txtKesimpulanPerbaikan.Text = "" & dt.Rows(0)("KesimpulanPerbaikan")
                 txtVerifikasi.Text = dt.Rows(0)("Verifikasi")
                 ddlKesimpulanVerifikasi.SelectedValue = dt.Rows(0)("KesimpulanVerifikasi")
@@ -142,8 +141,8 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
                     txtKeluhanLain.Text, ddlKetidaksesuaian.SelectedValue, txtKetidaksesuaianLain.Text, txtTglTerjadi.Text, ddlRencana.SelectedValue, _
                     ddlDampak.SelectedValue, txtYesDampak.Text, ddlJenisSediaan.SelectedValue, txtUraian.Text, txtTindakan.Text, _
                     ddlResiko.SelectedValue, txtPelapor.Text, ddlDepartemenPelapor.SelectedValue, txtTglPelapor.Text, txtInvestigasi.Text, _
-                    ddlPenyebabPenyimpangan.SelectedValue, txtPenyebabPenyimpanganLain.Text, txtPerbaikan.Text, chkIsClosedPerbaikan.Checked, txtTglPerbaikan.Text, txtEmailPerbaikan.Text, _
-                    txtPenanggungJawabPerbaikan.Text, ddlDepartemenPJPerbaikan.SelectedValue, txtTindakanPerbaikan.Text, chkIsClosedTPerbaikan.Checked, txtTglTindakanPerbaikan.Text, txtEmailTindakanPerbaikan.Text, _
+                    ddlPenyebabPenyimpangan.SelectedValue, txtPenyebabPenyimpanganLain.Text, _
+                    txtTindakanPerbaikan.Text, chkIsClosedTPerbaikan.Checked, txtTglTindakanPerbaikan.Text, txtEmailTindakanPerbaikan.Text, _
                     txtPenanggungJawabTindakanPerbaikan.Text, ddlDepartemenPJTPerbaikan.SelectedValue, txtTindakanPencegahan.Text, chkIsClosedTPencegahan.Checked, txtTglTindakanPencegahan.Text, txtEmailTindakanPencegahan.Text, _
                     txtPenanggungJawabTindakanPencegahan.Text, ddlDepartemenPJTPencegahan.SelectedValue, txtKesimpulanPerbaikan.Text, txtVerifikasi.Text, ddlKesimpulanVerifikasi.SelectedValue, _
                     txtTglKesimpulanVerifikasi.Text, txtTerbitBaru.Text)
@@ -155,12 +154,14 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
             Throw ex
         End Try
 
+        'txtPerbaikan.Text, chkIsClosedPerbaikan.Checked, txtTglPerbaikan.Text, txtEmailPerbaikan.Text,txtPenanggungJawabPerbaikan.Text, ddlDepartemenPJPerbaikan.SelectedValue, 
     End Sub
 
     Protected Sub txtNoLK_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtNoLK.TextChanged
 
         If txtNoLK.Text <> "" Then
             GetLaporanKetidaksesuaian()
+            BindGrid()
         End If
 
         If txtSumberLain.Text <> "" Then
@@ -210,11 +211,9 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
         'txtTglKesimpulanVerifikasi.Enabled = True
         'txtTerbitBaru.Enabled = True
 
-
         txtProduk.Focus()
 
     End Sub
-
     Protected Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
 
         If Not String.IsNullOrEmpty(txtNoLK.Text) Then
@@ -229,6 +228,61 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
 
     End Sub
 
+    Protected Sub gvDetailPerbaikan_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles gvDetailPerbaikan.RowCommand
+        Dim btnSelect As LinkButton = DirectCast(e.CommandSource, LinkButton)
+        Dim row As GridViewRow = DirectCast(btnSelect.NamingContainer, GridViewRow)
+        Dim LineID As Label = DirectCast(row.FindControl("lblLineID"), Label)
+        Dim lblPenanggungJawabPerbaikan As Label = DirectCast(row.FindControl("lblPenanggungJawabPerbaikan"), Label)
+        Dim ddlDepartemenPJPerbaikan As DropDownList = DirectCast(row.FindControl("ddlDepartemenPJPerbaikan"), DropDownList)
+        Dim lblTglPerbaikan As Label = DirectCast(row.FindControl("lblTglPerbaikan"), Label)
+        Dim lblPerbaikan As Label = DirectCast(row.FindControl("lblPerbaikan"), Label)
+        Dim lblEmailPerbaikan As Label = DirectCast(row.FindControl("lblEmailPerbaikan"), Label)
+        Dim isClosedPerbaikan As CheckBox = DirectCast(row.FindControl("chkIsClosedPerbaikan"), CheckBox)
+
+        If e.CommandName = "Select" Then
+            lblLineID.Text = LineID.Text
+            txtPenanggungJawabPerbaikan.Text = lblPenanggungJawabPerbaikan.Text
+            ddlDepartemenPJPerbaikan.SelectedValue = ddlDepartemenPJPerbaikan.SelectedValue
+            txtTglPerbaikan.Text = lblTglPerbaikan.Text
+            txtPerbaikan.Text = lblPerbaikan.Text
+            txtEmailPerbaikan.Text = lblEmailPerbaikan.Text
+            chkIsClosedPerbaikan.Checked = isClosedPerbaikan.Checked
+            btnHapusPerbaikan.Enabled = True
+        End If
+
+    End Sub
+
+    Protected Sub btnAddPerbaikan_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddPerbaikan.Click
+
+        Try
+            If Not String.IsNullOrEmpty(txtPenanggungJawabPerbaikan.Text) Then
+                oLK.SaveLaporanKetidaksesuaianDetail(txtPenanggungJawabPerbaikan.Text, ddlDepartemenPJPerbaikan.SelectedValue, txtTglPerbaikan.Text, _
+                                                     txtPerbaikan.Text, txtEmailPerbaikan.Text, chkIsClosedPerbaikan.Checked, lblLineID.Text, txtNoLK.Text)
+
+                ResetDetailControls()
+                BindGrid()
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+    Protected Sub btnHapusPerbaikan_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnHapusPerbaikan.Click
+
+        Try
+            If Not String.IsNullOrEmpty(txtPenanggungJawabPerbaikan.Text) Then
+                oLK.DeleteLaporanKetidaksesuaianDetail(lblLineID.Text)
+                ResetDetailControls()
+                BindGrid()
+            End If
+
+        Catch ex As Exception
+            Throw ex
+
+        End Try
+    End Sub
 
     Private Sub ClearControls()
 
@@ -269,12 +323,12 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
         ddlPenyebabPenyimpangan.SelectedIndex = 0
         txtPenyebabPenyimpanganLain.Text = ""
         txtPenyebabPenyimpanganLain.Enabled = False
-        txtPerbaikan.Text = ""
-        chkIsClosedPerbaikan.Checked = False
-        txtTglPerbaikan.Text = ""
-        txtEmailPerbaikan.Text = ""
-        txtPenanggungJawabPerbaikan.Text = ""
-        ddlDepartemenPJPerbaikan.SelectedIndex = 0
+        'txtPerbaikan.Text = ""
+        'chkIsClosedPerbaikan.Checked = False
+        'txtTglPerbaikan.Text = ""
+        'txtEmailPerbaikan.Text = ""
+        'txtPenanggungJawabPerbaikan.Text = ""
+        'ddlDepartemenPJPerbaikan.SelectedIndex = 0
         txtTindakanPerbaikan.Text = ""
         chkIsClosedTPerbaikan.Checked = False
         txtTglTindakanPerbaikan.Text = ""
@@ -294,8 +348,32 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
         txtTglKesimpulanVerifikasi.Enabled = False
         txtTerbitBaru.Text = ""
         txtTerbitBaru.Enabled = False
-
+        btnAddPerbaikan.Enabled = False
+        btnHapusPerbaikan.Enabled = False
+        ResetDetailControls()
+        gvDetailPerbaikan.DataSource = Nothing
+        chkIsClosedPerbaikan.Checked = False
         txtNoLK.Focus()
+
+    End Sub
+
+    Private Sub ResetDetailControls()
+
+        txtPenanggungJawabPerbaikan.Text = ""
+        ddlDepartemenPJPerbaikan.SelectedIndex = 0
+        txtTglPerbaikan.Text = ""
+        txtPerbaikan.Text = ""
+        txtEmailPerbaikan.Text = ""
+        lblLineID.Text = "0"
+        btnHapusPerbaikan.Enabled = False
+
+    End Sub
+
+    Private Sub BindGrid()
+
+        oLK_Detail.Select()
+        gvDetailPerbaikan.DataSourceID = "oLK_Detail"
+        gvDetailPerbaikan.DataBind()
 
     End Sub
 
@@ -320,7 +398,6 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
         End If
 
     End Sub
-
 
     Protected Sub ddlAsalKeluhan_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlAsalKeluhan.SelectedIndexChanged
 
@@ -404,6 +481,7 @@ Partial Class QA_DataMaster_LaporanKetidaksesuaian
         ddlDepartemenPJTPerbaikan.SelectedIndex = 0
 
     End Sub
+
 End Class
 
 

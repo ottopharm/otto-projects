@@ -1,8 +1,8 @@
 <%@ Page Language="VB" MasterPageFile="~/MasterPage/main.master" AutoEventWireup="false"
     CodeFile="LaporanKetidaksesuaian.aspx.vb" Inherits="QA_DataMaster_LaporanKetidaksesuaian"
     Title="Laporan Ketidaksesuaian" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
         .style1
@@ -31,8 +31,7 @@
                     No. Lap.Ketidaksesuaian :
                 </td>
                 <td align="left">
-                    <asp:TextBox ID="txtNoLK" runat="server" AutoPostBack="true" Height="19px" 
-                        Width="237px" />
+                    <asp:TextBox ID="txtNoLK" runat="server" AutoPostBack="true" Height="19px" Width="237px" />
                     <asp:RequiredFieldValidator ID="valNoLK" runat="server" ControlToValidate="txtNoLK"
                         ErrorMessage="*" />
                     Status :
@@ -99,8 +98,7 @@
                                 <asp:ListItem Text="Lain - lain" Value="5" />
                             </asp:DropDownList>
                             &nbsp; Sumber Lain :
-                            <asp:TextBox ID="txtSumberLain" runat="server" Enabled="false" Height="19px" 
-                                Width="323px" />
+                            <asp:TextBox ID="txtSumberLain" runat="server" Enabled="false" Height="19px" Width="323px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -120,12 +118,10 @@
                                 <asp:ListItem Text="Lain - lain" Value="4" />
                             </asp:DropDownList>
                             &nbsp;
-                            <asp:TextBox ID="txtDetailAsalKeluhan" runat="server" Height="19px" 
-                                Width="251px" />
+                            <asp:TextBox ID="txtDetailAsalKeluhan" runat="server" Height="19px" Width="251px" />
                             <p>
                                 Keluhan Lain :
-                                <asp:TextBox ID="txtKeluhanLain" runat="server" Enabled="false" Height="19px" 
-                                    Width="272px" /></p>
+                                <asp:TextBox ID="txtKeluhanLain" runat="server" Enabled="false" Height="19px" Width="272px" /></p>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -150,8 +146,8 @@
                                 <asp:ListItem Text="Lain - lain" Value="9" />
                             </asp:DropDownList>
                             &nbsp; Ketidaksesuaian Lain :
-                            <asp:TextBox ID="txtKetidaksesuaianLain" runat="server" Enabled="false" 
-                                Height="19px" Width="276px" />
+                            <asp:TextBox ID="txtKetidaksesuaianLain" runat="server" Enabled="false" Height="19px"
+                                Width="276px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -199,8 +195,7 @@
                                 <asp:ListItem Text="Ya" Value="2" />
                             </asp:DropDownList>
                             &nbsp; No.Batch :
-                            <asp:TextBox ID="txtYesDampak" runat="server" Enabled="false" Height="19px" 
-                                Width="249px" />
+                            <asp:TextBox ID="txtYesDampak" runat="server" Enabled="false" Height="19px" Width="249px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -325,8 +320,8 @@
                             <br>
                             <br>
                             Penyebab Penyimpangan Lain :
-                            <asp:TextBox ID="txtPenyebabPenyimpanganLain" runat="server" Enabled="false" 
-                                Height="19px" Width="256px" />
+                            <asp:TextBox ID="txtPenyebabPenyimpanganLain" runat="server" Enabled="false" Height="19px"
+                                Width="256px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -336,40 +331,6 @@
                     font-weight: normal; font-variant: normal; text-transform: uppercase; color: #000000;
                     background-color: #7E7E7E; font-style: normal;">
                     D. Perbaikan, Tindakan Perbaikan, dan Tindakan Pencegahan
-                </td>
-            </tr>
-            <tr valign="middle">
-                <td align="right" class="style1">
-                    Perbaikan :
-                </td>
-                <td align="left">
-                    <asp:TextBox ID="txtPerbaikan" runat="server" Width="400" TextMode="MultiLine" Height="50"
-                        Wrap="true" />
-                    &nbsp; &nbsp; Status :
-                    <asp:CheckBox ID="chkIsClosedPerbaikan" Text="Closed" runat="server" />
-                    <%--<asp:RequiredFieldValidator ID="valPerbaikan" runat="server" ControlToValidate="txtPerbaikan" ErrorMessage="*" />--%>
-                    <p>
-                        Batas Waktu Penyelesaian :
-                        <asp:TextBox ID="txtTglPerbaikan" runat="server" Width="80" />
-                        <%--<asp:ImageButton ID="btnTglPerbaikan" runat="server" ImageUrl="~/Image/25.png" />--%>
-                        <asp:Image ID="btnTglPerbaikan" runat="server" ImageUrl="~/Image/25.png" />
-                        <AjaxToolkit:CalendarExtender ID="calTglPerbaikan" runat="server" TargetControlID="txtTglPerbaikan"
-                            PopupButtonID="btnTglPerbaikan" CssClass="MyCalendar" Format="dd-MMM-yy" />
-                    </p>
-                    <p>
-                        Email Reminder : &nbsp; &nbsp; &nbsp;
-                        <asp:TextBox ID="txtEmailPerbaikan" runat="server" Height="21px" Width="376px" />
-                    </p>
-                    <p>
-                        Penanggung Jawab :
-                        <asp:TextBox ID="txtPenanggungJawabPerbaikan" runat="server" Height="19px" 
-                            Width="190px" />
-                        <%--<asp:RequiredFieldValidator ID="valPenanggungJawabPerbaikan" runat="server" ControlToValidate="txtPenanggungJawabPerbaikan"
-                            ErrorMessage="*" />--%>
-                        <asp:DropDownList ID="ddlDepartemenPJPerbaikan" runat="server" DataSourceID="oDept"
-                            DataTextField="DeptName" DataValueField="DeptId">
-                        </asp:DropDownList>
-                    </p>
                 </td>
             </tr>
             <tr valign="middle">
@@ -396,8 +357,8 @@
                     </p>
                     <p>
                         Penanggung Jawab :
-                        <asp:TextBox ID="txtPenanggungJawabTindakanPerbaikan" runat="server" 
-                            Height="19px" Width="190px" />
+                        <asp:TextBox ID="txtPenanggungJawabTindakanPerbaikan" runat="server" Height="19px"
+                            Width="190px" />
                         <%--<asp:RequiredFieldValidator ID="valPenanggungJawabTindakanPerbaikan" runat="server"
                             ControlToValidate="txtPenanggungJawabTindakanPerbaikan" ErrorMessage="*" />--%>
                         <asp:DropDownList ID="ddlDepartemenPJTPerbaikan" runat="server" DataSourceID="oDept"
@@ -431,8 +392,8 @@
                     </p>
                     <p>
                         Penanggung Jawab :
-                        <asp:TextBox ID="txtPenanggungJawabTindakanPencegahan" runat="server" 
-                            Height="19px" Width="190px" />
+                        <asp:TextBox ID="txtPenanggungJawabTindakanPencegahan" runat="server" Height="19px"
+                            Width="190px" />
                         <%--<asp:RequiredFieldValidator ID="valPenanggungJawabTindakanPencegahan" runat="server"
                             ControlToValidate="txtPenanggungJawabTindakanPencegahan" ErrorMessage="*" />--%>
                         <asp:DropDownList ID="ddlDepartemenPJTPencegahan" runat="server" DataSourceID="oDept"
@@ -494,8 +455,7 @@
                                 PopupPosition="TopLeft" />
                             <%--<asp:RequiredFieldValidator ID="valTglKesimpulanVerifikasi" runat="server" ControlToValidate="txtTglKesimpulanVerifikasi" ErrorMessage="*" />--%>
                             &nbsp; Terbit Baru
-                            <asp:TextBox ID="txtTerbitBaru" runat="server" Enabled="false" Height="19px" 
-                                Width="178px" />
+                            <asp:TextBox ID="txtTerbitBaru" runat="server" Enabled="false" Height="19px" Width="178px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
@@ -508,8 +468,130 @@
                     <asp:LinkButton ID="btnSave" CssClass="LinkButton" runat="server" Text="Save" />
                 </td>
             </tr>
-        </table>
+            </table>
+            <%-- <tr>
+                <td colspan="2" align="left" bgcolor="#7E7E7E" style="font-family: 'Arial Black';
+                    font-size: large; font-weight: normal; font-variant: normal; text-transform: uppercase;
+                    color: #000000; background-color: #7E7E7E; font-style: normal;">
+                    Detail Perbaikan
+                </td>
+            </tr>--%>
+            <div style="background-color: #7E7E7E; padding-left: 5px; margin-top: 10px; margin-bottom: 10px">
+                <h1>Detail Perbaikan</h1>
+            </div>
+            <asp:UpdatePanel ID="upDetailPerbaikan" runat="server">
+            <ContentTemplate>
+            <table>
+                <tr valign="middle">
+                    <td align="right" class="style1">
+                        Perbaikan :
+                    </td>
+                    <td align="left">
+                        <p>
+                            Penanggung Jawab :
+                            <asp:TextBox ID="txtPenanggungJawabPerbaikan" runat="server" Height="19px" Width="190px" />
+                            <asp:RequiredFieldValidator ID="valPenanggungJawabPerbaikan" ValidationGroup="detail"
+                                runat="server" ControlToValidate="txtPenanggungJawabPerbaikan" ErrorMessage="*" />
+                            <asp:DropDownList ID="ddlDepartemenPJPerbaikan" runat="server" DataSourceID="oDept"
+                                DataTextField="DeptName" DataValueField="DeptId">
+                            </asp:DropDownList>
+                        </p>
+                        <p>
+                            Batas Waktu Penyelesaian :
+                            <asp:TextBox ID="txtTglPerbaikan" runat="server" Width="80" />
+                            <asp:Image ID="btnTglPerbaikan" runat="server" ImageUrl="~/Image/25.png" />
+                            <AjaxToolkit:CalendarExtender ID="calTglPerbaikan" runat="server" TargetControlID="txtTglPerbaikan"
+                                PopupButtonID="btnTglPerbaikan" CssClass="MyCalendar" Format="dd-MMM-yy" />
+                            <asp:RequiredFieldValidator ID="valTglPerbaikan" ValidationGroup="detail" runat="server"
+                                ControlToValidate="txtTglPerbaikan" ErrorMessage="*" />
+                        </p>
+                        <asp:TextBox ID="txtPerbaikan" runat="server" Width="400" TextMode="MultiLine" Height="50"
+                            Wrap="true" />
+                        <p>
+                            Email Reminder : &nbsp; &nbsp; &nbsp;
+                            <asp:TextBox ID="txtEmailPerbaikan" runat="server" Height="21px" Width="376px" />
+                            <asp:RequiredFieldValidator ID="valEmailPerbaikan" ValidationGroup="detail" runat="server"
+                                ControlToValidate="txtEmailPerbaikan" ErrorMessage="*" />
+                        </p>
+                        <p>
+                            Status :
+                            <asp:CheckBox ID="chkIsClosedPerbaikan" Text="Closed" runat="server" />
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td align="right" colspan="2">
+                        <asp:LinkButton ID="btnHapusPerbaikan" CssClass="LinkButton" Enabled="false" Text="Delete"
+                            runat="server" />&nbsp;|&nbsp;
+                        <asp:LinkButton ID="btnAddPerbaikan" CssClass="LinkButton" ValidationGroup="detail"
+                            Enabled="false" Text="Save" runat="server" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <asp:GridView ID="gvDetailPerbaikan" runat="server" AllowSorting="true" AutoGenerateColumns="false"
+                AlternatingRowStyle-BackColor="#F7F7F7" DataKeyNames="LineID" BorderColor="#333333"
+                CellPadding="5">
+                <Columns>
+                    <asp:TemplateField ShowHeader="false" ItemStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnSelect" CssClass="LinkButton" Text="Select" CommandName="Select"
+                                runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Penanggung Jawab" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:Label ID="lblPenanggungJawabPerbaikan" Text='<%# Eval("PenanggungJawabPerbaikan") %>'
+                                runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Departemen" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:Label ID="ddlDepartemenPJPerbaikan" Text='<%# Eval("DepartemenPJPerbaikan") %>'
+                                runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Tgl. Perbaikan" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:Label ID="lblTglPerbaikan" Text='<%# Eval("TglPerbaikan","{0:dd-MMM-yyyy}") %>'
+                                runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Perbaikan" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:Label ID="lblPerbaikan" Text='<%# Eval("Perbaikan") %>' runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Email Reminder" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:Label ID="lblEmailPerbaikan" Text='<%# Eval("EmailPerbaikan") %>' runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Closed" HeaderStyle-HorizontalAlign="Left">
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chk" Checked='<%# Eval("IsClosedPerbaikan") %>' Enabled="false" runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Label ID="lblLineID" Text='<%# Eval("LineID") %>' Style="display: none" runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:Label ID="lblLineID" Style="display: none" Text="0" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
-    <asp:ObjectDataSource ID="oDept" runat="server" TypeName="ChangeControl" SelectMethod="GetDepartment">
+    <asp:ObjectDataSource ID="oLK_Detail" runat="server" 
+        TypeName="LaporanKetidaksesuaian"
+        SelectMethod="GetLaporanKetidaksesuaianDetail">
+        <SelectParameters>
+            <asp:ControlParameter Name="NoLK" ControlID="txtNoLK" PropertyName="Text" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="oDept" runat="server" 
+        TypeName="ChangeControl" 
+        SelectMethod="GetDepartment">
     </asp:ObjectDataSource>
 </asp:Content>
