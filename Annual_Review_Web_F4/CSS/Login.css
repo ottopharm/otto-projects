@@ -1,0 +1,69 @@
+﻿body 
+{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+#wrapper
+{
+	position:relative;
+	top:200px;
+	width:350px;
+	margin:0 auto;
+}
+
+#headerLeft
+{
+	background:url('../Image/clb.gif') no-repeat top left;
+}
+
+#headerRight
+{
+	background:url('../Image/crb.gif') no-repeat top right;
+}
+
+#headerMid
+{
+	text-align:left;
+	background:url('../Image/chb.gif') repeat-x top;
+	margin:0 3px 0 3px;
+	font-family:Arial;
+	font-weight:bold;
+	color:White
+}
+
+#headerRight,#headerMid
+{
+	height:25px;
+}
+
+#container
+{
+	min-height:150px;
+	width:340px;
+	border-left: solid 1px Silver;
+	border-right:solid 1px Silver;
+	margin:0 1px;
+}
+
+#footerLeft
+{
+	background:url('../Image/cfl.gif') no-repeat top left;
+}
+
+#footerRight
+{
+	background:url('../Image/cfr.gif') no-repeat top right;
+}
+
+#footerMid
+{
+	background:url('../Image/cf.gif') repeat-x top;
+	margin:0 3px 0 3px;
+}
+
+#footerRight,#footerMid
+{
+	height:7px;
+}

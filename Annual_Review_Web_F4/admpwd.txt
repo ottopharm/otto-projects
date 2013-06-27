@@ -1,0 +1,6 @@
+﻿admqa	: 4kpwd1!
+admqc	: qcpwd3!
+admprod : prpwd3!
+admrd   : rdpwd4!
+admlogistik	: 5p2ic!
+userLogistik: u6p2ic!

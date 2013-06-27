@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home"  description="">
+    <siteMapNode url="" title="Data Master"  description="Data Master" >
+      <siteMapNode url="AnnualProdReview.aspx" title="Product Review" description="">
+        <siteMapNode url="~/QC/DataMaster/ProductReview-QC.aspx" title="Product Review-QC" description="" />
+        <siteMapNode url="~/QA/DataMaster/ProductReview-QA.aspx" title="Product Review-QA" description="" />
+        <siteMapNode url="~/Produksi/DataMaster/ProductReview-Prod.aspx" title="Product Review-Produksi" description="" />
+      </siteMapNode>
+      <siteMapNode url="" title="Master List Produk Jadi" description="" >
+        <siteMapNode url="~/QA/DataMaster/MasterListProdukJadi.aspx" title="Master List Produk Jadi - QA" description="" />
+        <siteMapNode url="~/RD/DataMaster/MasterListProdukJadi.aspx" title="Master List Produk Jadi - RD" description="" />
+        <siteMapNode url="~/RD/DataMaster/ProdukSpek.aspx" title="Master Spek Produk" />
+      </siteMapNode>
+      <siteMapNode url="~/QA/DataMaster/LPPT.aspx" title="LPPT" description="Laporan Penyimpangan, Penyelidikan dan Tindakan" />
+      <siteMapNode url="~/QA/DataMaster/ChangeControl.aspx" title="Change Control" description="Log sheet pengendalian perubahan" />
+      <siteMapNode url="" title="Laporan Produk Kembalian" description="" >
+        <siteMapNode url="~/QA/DataMaster/ProdukRetur.aspx" title="Produk Kembalian - QA" description="Evaluasi Produk Kembalian" />
+        <siteMapNode url="~/Logistik/DataMaster/ProdukRetur.aspx" title="Produk Kembalian - PPIC" description="Laporan Produk Kembalian" />
+      </siteMapNode>
+      <siteMapNode url="~/QA/DataMaster/PengkajianMutuProduk.aspx" title="Pengkajian Mutu Produk" description="Evaluasi Produk Kembalian" />
+      <siteMapNode url="~/QA/DataMaster/LaporanKetidaksesuaian.aspx" title="Laporan Ketidaksesuaian" description="Master Laporan Ketidaksesuaian" />
+    </siteMapNode>
+    <siteMapNode url="" title="Reports"  description="" >
+      <siteMapNode url="~/QA/Report/AnnualProductReview.aspx" title="Annual Product Review" description="" >
+        <siteMapNode url="~/QA/Report/RptProdReview.aspx" title="Report" description="" />
+      </siteMapNode>
+      <siteMapNode url="~/QA/Report/LPPT.aspx" title="LPPT" description="Laporan Penyimpangan, Penyelidikan dan Tindakan" />
+      <siteMapNode url="~/QA/Report/ChangeControl.aspx" title="Change Control" description="Laporan Log sheet pengendalian perubahan" />
+      <siteMapNode url="~/SharedReport/EmptyQCDate.aspx" title="CoA Belum Masuk QA" description="" />
+      <siteMapNode url="~/SharedReport/UncompleteCPBCKB.aspx" title="CPB CKB Belum Lengkap" description="" />
+      <siteMapNode url="~/Produksi/Report/ProdKPI.aspx" title="Produksi KPI" description="" />
+      <siteMapNode url="" title="Master List Produk Jadi" description="">
+        <siteMapNode url="~/MasterListReport/MasterListDN.aspx" title="Master List Produk Jadi" description="" />
+        <siteMapNode url="~/MasterListReport/MasterListDoc.aspx" title="Master List Kode Dokumen" description="" />
+        <siteMapNode url="~/MasterListReport/MasterListPBPOJ.aspx" title="Master List PBPOJ" description="" />
+        <siteMapNode url="~/MasterListReport/DaftarDaluarsaProduk.aspx" title="Daftar Daluarsa Produk" description="" />
+        <siteMapNode url="~/MasterListReport/DaftarKondisiSimpan.aspx" title="Daftar Kondisi Penyimpanan" description="" />
+        <siteMapNode url="~/MasterListReport/DaftarProdSpek.aspx" title="Daftar Spek Produk" description="" />
+      </siteMapNode>
+      <siteMapNode url="" title="Laporan Produk Kembalian" description="">
+        <siteMapNode url="~/QA/Report/LPK.aspx" title="Produk Kembalian - QA" description="Laporan Evaluasi LPK" />
+        <siteMapNode url="~/LaporanLPK/LPK.aspx" title="Produk Kembalian - PPIC" description="Laporan Produk Kembalian" />
+      </siteMapNode>
+      <siteMapNode url="~/QA/Report/PengkajianMutu.aspx" title="Pengkajian Mutu Produk" description="" />
+      <siteMapNode url="" title="Laporan Ketidaksesuaian" description="">
+        <siteMapNode url="~/QA/Report/AuditInternal.aspx" title="Audit Internal" description="" />
+        <siteMapNode url="~/QA/Report/LaporanKetidaksesuaian.aspx" title="Laporan Ketidaksesuaian" description="" />
+        <siteMapNode url="~/QA/Report/LaporanKeluhan.aspx" title="Laporan Keluhan" description="" />
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

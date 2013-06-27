@@ -1,0 +1,211 @@
+﻿body 
+{
+    margin:0;
+    font-family:Verdana;
+    font-size:smaller;
+}
+
+h2
+{
+	color:White;
+}
+
+#header
+{
+	background: url('../Image/header.png') repeat-x;
+	height:100px;
+}
+
+#menu
+{
+	float:left; 
+	width:160px;
+	text-align:center;
+}
+
+#body
+{
+	background: url('../Image/nav_col_base.jpg') repeat-y left;
+	padding-top:10px;
+}
+
+#container
+{
+	margin-left:175px;
+}
+
+#searchBased
+{
+    padding-top:4px;
+    padding-bottom:4px;
+}
+.groupItemBar
+{
+    background: url('../Image/groupTitleleft.png') no-repeat left;
+}
+
+.groupItemTitle
+{
+    background: url('../Image/groupTitleRight.png') repeat-x;
+    color:White;
+    font: bold 14px "Lucida Grande", "Trebuchet MS", Verdana;
+    margin-left:42px;
+    height:40px;
+    text-align:center;
+}
+
+.groupTitle
+{
+    text-align:left;
+    width:120px;
+    padding:2px;
+    font: bold 14px "Trebuchet MS",Verdana;
+    color:White;
+    background-color:White;
+    border:solid 1px #333333;
+    border-bottom:none;
+}
+
+.groupContent
+{
+    background-color:#F2F7FD;
+    width:575px;
+    border:solid 1px #333333;
+}
+.siteMapPath
+{
+	font: bold 14px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+}
+
+.breadcrumb
+{
+    background: url('../Image/breadcrumb.gif') no-repeat center;
+}
+
+A.LinkButton
+{
+    text-decoration:none;
+}
+
+A.LinkButton:hover
+{
+    text-decoration:underline;
+}
+
+.columLabel
+{
+    /*border-bottom:solid 1px black;*/
+    background-color:#CC9966;
+    text-align:right;
+    padding:2px 4px;
+}
+
+.mainMenu
+{
+    text-align:left;
+}
+
+.staticItemMenu
+{
+    border-bottom:dotted 1px White;
+    padding-left:10px;
+    background: url('../Image/04.png') no-repeat left;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+.staticItemMenu a
+{
+    background-image:none;
+}
+
+.dynamicItemMenu
+{
+    border:solid 1px black;
+    background-color:Yellow;
+    text-align:left;
+    padding:2px;
+}
+
+.dynamicItemMenuHover
+{
+    border:solid 1px black;
+    background-color:Orange;
+    text-align:left;
+    padding:2px;
+}
+    
+.columControl
+{
+    /*border:solid 1px black;*/
+    background-color:White;
+    text-align:left;
+}
+
+.textBoxBorderLess
+{
+    border:none;
+}
+
+/* Kelengkapan CKB & CPB */
+fieldset.validasiItem
+{
+    width: 260px;
+}
+
+fieldset.kelengkapanDok
+{
+    width: 650px;
+}
+
+fieldset
+{
+    margin-top: 10px;
+}
+
+.first_div
+{
+    margin-top: 10px;
+}
+
+fieldset div
+{
+    clear: both;
+    margin:0;
+    margin-top:2px;
+}
+
+fieldset.kelengkapanDok div
+{
+    border-bottom: dotted 1px gray; 
+}
+
+.inputLabel
+{
+    float: left;
+    width: 80px;
+    font: bold 0.9em;
+    text-align: right;
+}
+
+.inputTxt
+{
+    border:inset 1px #00008B;
+    margin-left: 5px;
+}
+
+fieldset ul
+{
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset li
+{
+    border-bottom: dotted 1px gray;
+}
+   
+.alignLeft {text-align: right; vertical-align: middle; color: Blue;}
+.clearLeft {clear: left ;}

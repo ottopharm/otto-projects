@@ -1,0 +1,58 @@
+﻿<%@ Master Language="VB" CodeFile="main.master.vb" Inherits="MasterPage_main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="../CSS/main.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/AjaxToolkit.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="smMain" runat="server">
+    </asp:ScriptManager>
+    <div id="header">
+        <div style="padding-left:5px;padding-top:20px;">
+            <h2>QA-QC Dept.</h2>
+        </div>
+    </div>
+    <div id="body">
+        <div id="leftNav">
+            <div id="menu">
+                <asp:Menu ID="mainMenu" runat="server" 
+                    Width="140px" 
+                    CssClass="mainMenu" 
+                    StaticMenuItemStyle-CssClass="staticItemMenu" 
+                    DynamicMenuItemStyle-CssClass="dynamicItemMenu"
+                    DynamicHoverStyle-CssClass="dynamicItemMenuHover"
+                    DataSourceID="dsSiteMap" />
+            </div>
+            <div id="container">
+                <div id="breadcrumb">
+                    <div style="float:left">
+                    <asp:SiteMapPath ID="siteMapPath" runat="server"
+                        CssClass="siteMapPath" 
+                        PathSeparatorStyle-CssClass="breadcrumb" />
+                    </div>
+                    <div style="float:right; margin-right:10px">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="LinkButton" /> |
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div style="margin-top:5px">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <asp:SiteMapDataSource ID="dsSiteMap" runat="server" ShowStartingNode="false" />
+    </form>
+</body>
+</html>
